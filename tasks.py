@@ -16,8 +16,27 @@ def fizzbuzz(n):
         fizzbuzz(7) -> "7"
     """
     # Реализовал(а): ...
+
+    if n%3==0 and n%5==0:
+        return "FizzBuzz"
+    elif n%3==0 and n%5!=0:
+        return "Fizz"
+    elif n%3!=0 and n%5==0:
+        return "Buzz"
+    else:
+        return str(n)
+    
     raise NotImplementedError
 
+
+def f(n):
+    a=[]
+    for i in range (2,int(n**0.5)+1):
+        if n%i==0:
+            a.append(i)
+            a.append(n//i)
+    return sorted(set(a))
+    
 
 def is_prime(n):
     """Вернуть True, если n — простое число (больше 1 и делится только на 1 и на себя).
@@ -28,4 +47,9 @@ def is_prime(n):
         is_prime(1) -> False
     """
     # Реализовал(а): ...
+    
+    a=f(n)
+    if len(a)==0:
+        return "True"
+    else: return "False"
     raise NotImplementedError
