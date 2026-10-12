@@ -39,17 +39,6 @@ def f(n):
     
 
 def is_prime(n):
-    """Вернуть True, если n — простое число (больше 1 и делится только на 1 и на себя).
-
-    Примеры:
-        is_prime(13) -> True
-        is_prime(9) -> False
-        is_prime(1) -> False
-    """
-    # Реализовал(а): ...
-    
-    a=f(n)
-    if len(a)==0:
-        return "True"
-    else: return "False"
+    if all([n>1 and n%i!=0 for i in range(2,int(n**0.5)+1)]): return True
+    else: return False
     raise NotImplementedError
